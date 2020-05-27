@@ -69,7 +69,7 @@ io.on('connection' , socket => {
     console.log('user connected : ' , socket.id);
 })
 
-server.listen(8888 , (err) => {
+server.listen(8080 , (err) => {
     if (err) {
         throw Error(err);
     }
