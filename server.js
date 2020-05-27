@@ -8,7 +8,9 @@ app.use(express.urlencoded({extended: true}))
 
 const rooms = new Map();
 
-
+app.get('/' ,(req, res) => {
+    res.send()
+}) 
 
 app.get('/rooms/:id' ,(req, res) => {
     const { id : roomId } = req.params;
@@ -21,6 +23,7 @@ app.get('/rooms/:id' ,(req, res) => {
     : {users: [], messages: [] };
     res.json(obj)
 }) 
+
 
 app.post('/rooms', (req, res) => {
     const {roomId, userName} = req.body;
