@@ -3,6 +3,11 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
@@ -69,9 +74,9 @@ io.on('connection' , socket => {
     console.log('user connected : ' , socket.id);
 })
 
-server.listen(8080 , (err) => {
+server.listen(port , (err) => {
     if (err) {
         throw Error(err);
     }
-    console.log('Сервер запущен');
+    console.log(`Сервер запущен:${port}`);
 });
