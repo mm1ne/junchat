@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: true}))
 const rooms = new Map();
 
 app.get('/' ,(req, res) => {
-    res.send()
+    res.send('Получ')
 }) 
 
 app.get('/rooms/:id' ,(req, res) => {
