@@ -41,6 +41,7 @@ app.post('/rooms', (req, res) => {
 io.on('connection' , socket => {
 
     socket.on('ROOM:JOIN' , ({ roomId , userName }) => {
+        console.log(roomId)
         socket.join(roomId);
         rooms.get(roomId).get('users').set(socket.id, userName);
         const users = [...rooms.get(roomId).get('users').values()];
