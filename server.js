@@ -35,7 +35,7 @@ app.post('/rooms', (req, res) => {
             ['messages', []],
         ]))
     }
-    res.send('res send')
+    res.send(rooms)
 })
 
 io.on('connection' , socket => {
