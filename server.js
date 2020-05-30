@@ -35,7 +35,7 @@ app.post('/rooms', (req, res) => {
             ['messages', []],
         ]))
     }
-    res.send(rooms)
+    res.send(rooms.keys())
 })
 
 io.on('connection' , socket => {
